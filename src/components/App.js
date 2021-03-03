@@ -7,6 +7,8 @@ import ImageList from "./ImageList";
 // needs to extend React.Component
 class App extends React.Component {
   // Initialize App state property as empty array
+  // If state initialized inside constructor
+  // need to use this.state = {}
   state = { images: [] };
 
   // Class method, do not use const.
@@ -27,7 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="ui container" style={{ marginTop: "10px" }}>
-        {/* Pass function as property to SearchBar component. SearchBar can call passed function by accessing props.onSubmit
+        {/* Pass in callback function from parent to the child component. Child component will then call the function. Need to bind 'this' so it refers to parent component. SearchBar can call passed function by accessing props.onSubmit
          */}
         {/* Here by defaut 'this' refers to props object onSubmit. 'This' always refers to what is left of
         the . 
